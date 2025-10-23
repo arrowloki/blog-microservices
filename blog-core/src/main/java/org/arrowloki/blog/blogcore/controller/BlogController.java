@@ -15,13 +15,13 @@ public class BlogController {
         this.blogService = blogService;
     }
 
-    @PostMapping("/")
+    @PostMapping()
     public ResponseEntity<Blog> create(@RequestBody Blog blog) {
         Blog response = blogService.create(blog);
         return ResponseEntity.ok(response);
     }
 
-    @GetMapping("/")
+    @GetMapping()
     public ResponseEntity<List<Blog>> getAll() {
         return ResponseEntity.ok(blogService.getAll());
     }
